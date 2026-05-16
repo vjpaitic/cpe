@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 290px;
+  height: 100vh;
+  background: #000;
+  padding: 55px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.sidebar-top,
+.sidebar-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-logo {
+  width: 170px;
+  height: auto;
+  display: block;
+  margin-bottom: 95px;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+nav a:hover,
+nav a.active {
+  opacity: 0.75;
+}
+
+.sidebar-footer {
+  color: #8d8d8d;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* PAGINI INTERIOARE */
+
+.content,
+.inner-page {
+  position: fixed;
+  left: 290px;
+  top: 0;
+  width: calc(100vw - 290px);
+  height: 100vh;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+/* BANNER */
+
+.top-banner {
+  width: 100%;
+  height: 245px;
+  overflow: hidden;
+  position: relative;
+  background: #999;
+}
+
+.top-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h2 {
+  color: #fff;
+  font-size: 56px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+/* PANOURI DESPRE NOI / SERVICII */
+
+.about-page {
+  display: grid;
+  grid-template-rows: 245px 1fr;
+}
+
+.about-banner {
+  height: 245px;
+}
+
+.about-panels {
+  min-height: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px;
+  padding: 22px;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.about-panel {
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  border-radius: 16px;
+  padding: 28px 34px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-panel-grey {
+  background: #e7e7e7;
+}
+
+.about-panel-white {
+  background: #ffffff;
+}
+
+.about-panel h3 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #222;
+  flex-shrink: 0;
+}
+
+.panel-scroll {
+  min-height: 0;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 12px;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.panel-scroll p {
+  margin-bottom: 20px;
+}
+
+.panel-scroll ul {
+  padding-left: 26px;
+  margin: 15px 0 22px;
+}
+
+.panel-scroll li {
+  margin-bottom: 14px;
+}
+
+.panel-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-scroll::-webkit-scrollbar-thumb {
+  background: #b8b8b8;
+  border-radius: 20px;
+}
+
+/* CONTACT */
+
+.contact-page {
+  position: fixed;
+  left: 290px;
+  top: 0;
+  width: calc(100vw - 290px);
+  height: 100vh;
+  background: #f1f1f1;
+  overflow: hidden;
+}
+
+.contact-top {
+  padding: 35px 50px 25px;
+  text-align: center;
+}
+
+.contact-top h1 {
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+.contact-top p {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.contact-content {
+  display: flex;
+  gap: 30px;
+  padding: 10px 30px 20px;
+  align-items: flex-start;
+}
+
+.map-box {
+  flex: 2;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 10px;
+}
+
+.info-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.contact-card p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.whatsapp-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.whatsapp-box span {
+  font-size: 22px;
+  color: #333;
+}
+
+.whatsapp-box img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: 0.2s;
+  cursor: pointer;
+  margin-right: 75px;
+}
+
+.whatsapp-box img:hover {
+  transform: scale(1.08);
+}
+
+/* =========================
+   MOBILE / TABLET
+========================= */
+
+@media screen and (max-width: 1100px) {
+
+    html,
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px 20px;
+        align-items: center;
+    }
+
+    .sidebar-top,
+    .sidebar-main {
+        width: 100%;
+        align-items: center;
+    }
+
+    .side-logo {
+        width: 130px;
+        margin-bottom: 30px;
+    }
+
+    nav {
+        align-items: center;
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .sidebar-footer {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+
+    /* PAGINI */
+
+    .content,
+    .inner-page,
+    .contact-page {
+        position: relative;
+        left: 0;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    /* BANNER */
+
+    .top-banner,
+    .about-banner {
+        height: 220px;
+    }
+
+    .overlay h2 {
+        font-size: 42px;
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* PANOURI */
+
+    .about-page {
+        display: block;
+    }
+
+    .about-panels {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .about-panel {
+        height: auto;
+        min-height: 400px;
+    }
+
+    .about-panel h3 {
+        font-size: 28px;
+    }
+
+    .panel-scroll {
+        overflow: visible;
+        padding-right: 0;
+        font-size: 18px;
+    }
+
+    /* CONTACT */
+
+    .contact-top {
+        padding: 30px 20px 20px;
+    }
+
+    .contact-top h1 {
+        font-size: 42px;
+    }
+
+    .contact-top p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .map-box,
+    .info-box {
+        width: 100%;
+    }
+
+    .map-box iframe {
+        height: 300px;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+
+    .contact-card h3 {
+        font-size: 24px;
+    }
+
+    .contact-card p,
+    .contact-card a {
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .whatsapp-box img {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+
+/* TELEFOANE MICI */
+
+@media screen and (max-width: 600px) {
+
+    .overlay h2 {
+        font-size: 34px;
+    }
+
+    .contact-top h1 {
+        font-size: 34px;
+    }
+
+    .contact-top p {
+        font-size: 17px;
+    }
+
+    .about-panel h3 {
+        font-size: 24px;
+    }
+
+    .panel-scroll {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .contact-card h3 {
+        font-size: 22px;
+    }
+
+    .contact-card p,
+    .contact-card a {
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .side-logo {
+        width: 110px;
+    }
+}
