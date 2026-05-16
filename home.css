@@ -14,7 +14,6 @@ body {
   overflow: hidden;
 }
 
-/* SIDEBAR DESKTOP */
 .sidebar {
   position: fixed;
   left: 0;
@@ -29,8 +28,7 @@ body {
   z-index: 1000;
 }
 
-.sidebar-main,
-.sidebar-top {
+.sidebar-main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +69,6 @@ nav a.active {
   text-align: center;
 }
 
-/* HOME DESKTOP */
 .home {
   margin-left: 290px;
   width: calc(100% - 290px);
@@ -115,12 +112,12 @@ nav a.active {
   display: block;
 }
 
-/* TABLET / MOBIL - ACELAȘI MENIU ORIZONTAL */
+/* MOBILE / TABLET */
+
 @media screen and (max-width: 1100px) {
   html,
   body {
     height: auto;
-    min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
     background: #f1f1f1;
@@ -131,52 +128,47 @@ nav a.active {
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 18px 14px 16px;
-    display: flex;
-    flex-direction: column;
+    padding: 28px 18px 26px;
     align-items: center;
     justify-content: flex-start;
   }
 
-  .sidebar-main,
-  .sidebar-top {
+  .sidebar-main {
     width: 100%;
     align-items: center;
   }
 
   .side-logo {
-    width: 120px;
-    margin: 0 0 14px 0;
+    width: 115px;
+    margin-bottom: 22px;
   }
 
   nav {
     width: 100%;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 10px 12px;
+    gap: 10px;
   }
 
   nav a {
-    font-size: 14px;
-    line-height: 1.1;
-    text-align: center;
-    padding: 9px 10px;
-    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 13px;
+    line-height: 1;
+    padding: 11px 14px;
+    border: 1px solid #3a3a3a;
     border-radius: 999px;
+    background: #050505;
     white-space: nowrap;
   }
 
   nav a.active {
-    background: rgba(255,255,255,0.14);
+    background: #2b2b2b;
     opacity: 1;
   }
 
   .sidebar-footer {
-    margin-top: 14px;
-    font-size: 11px;
+    margin-top: 24px;
+    font-size: 12px;
   }
 
   .home {
@@ -187,13 +179,12 @@ nav a.active {
   }
 
   .home-hero {
-    width: 100%;
     height: auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
     gap: 28px;
-    padding: 36px 18px 45px;
+    padding: 36px 22px 42px;
     text-align: center;
     background: #ffffff;
   }
@@ -203,25 +194,25 @@ nav a.active {
   }
 
   .home-title h1 {
-    font-size: 34px;
+    font-size: 28px;
     line-height: 1.18;
-    max-width: 420px;
+    max-width: 360px;
   }
 
   .home-image img {
-    width: 320px;
-    max-width: 90%;
+    width: 250px;
+    max-width: 80%;
   }
 }
 
 @media screen and (max-width: 600px) {
   .sidebar {
-    padding: 16px 10px 14px;
+    padding: 26px 14px 24px;
   }
 
   .side-logo {
-    width: 100px;
-    margin-bottom: 12px;
+    width: 105px;
+    margin-bottom: 20px;
   }
 
   nav {
@@ -230,22 +221,18 @@ nav a.active {
 
   nav a {
     font-size: 12px;
-    padding: 8px 8px;
+    padding: 10px 12px;
   }
 
   .sidebar-footer {
-    font-size: 10px;
-  }
-
-  .home-hero {
-    padding: 32px 14px 40px;
+    font-size: 11px;
   }
 
   .home-title h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .home-image img {
-    width: 280px;
+    width: 230px;
   }
 }
