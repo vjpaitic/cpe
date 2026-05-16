@@ -1,256 +1,211 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* =========================================================
+   HOME.CSS
+   Aici NU există reguli pentru sidebar / nav.
+   Sidebar-ul rămâne controlat doar de style.css, identic cu restul paginilor.
+   ========================================================= */
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #ffffff;
-  color: #222;
-  overflow: hidden;
-}
-
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 290px;
-  height: 100vh;
-  background: #000;
-  padding: 55px 35px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 1000;
-}
-
-.sidebar-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.side-logo {
-  width: 170px;
-  height: auto;
-  display: block;
-  margin-bottom: 95px;
-}
-
-nav {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 38px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 1.15;
-  text-transform: uppercase;
-}
-
-nav a:hover,
-nav a.active {
-  opacity: 0.75;
-}
-
-.sidebar-footer {
-  color: #8d8d8d;
-  font-size: 13px;
-  line-height: 1.5;
-  text-align: center;
-}
+/* HOME DESKTOP */
 
 .home {
-  margin-left: 290px;
-  width: calc(100% - 290px);
+  position: fixed;
+  left: 290px;
+  top: 0;
+  width: calc(100vw - 290px);
   height: 100vh;
+  overflow: hidden;
   background: #ffffff;
 }
 
 .home-hero {
+  position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
-  grid-template-columns: 42% 58%;
+  grid-template-columns: 45% 55%;
   align-items: center;
-  padding: 0 85px 0 95px;
+  padding: 0 70px;
+  overflow: hidden;
 }
 
-.home-title {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+/* FUNDAL HOME */
+
+.home-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.72),
+      rgba(255,255,255,0.72)
+    ),
+    url("./images/home-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.home-title h1 {
-  max-width: 530px;
-  font-size: 45px;
-  line-height: 1.15;
+/* TEXT HOME */
+
+.home-text {
+  position: relative;
+  z-index: 3;
+  max-width: 560px;
+}
+
+.home-text h1 {
+  font-size: 54px;
+  line-height: 1.08;
   font-weight: 900;
-  color: #252525;
+  color: #1f1f1f;
+  margin-bottom: 26px;
 }
 
-.home-image {
-  display: flex;
+.accent-line {
+  width: 80px;
+  height: 5px;
+  background: #2f8cff;
+  border-radius: 999px;
+  margin-bottom: 28px;
+}
+
+.home-text p {
+  font-size: 22px;
+  line-height: 1.65;
+  color: #575757;
+  margin-bottom: 36px;
+  max-width: 470px;
+}
+
+.home-button {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  padding: 16px 34px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  transition: 0.25s;
 }
 
-.home-image img {
-  width: 610px;
-  max-width: 100%;
+.home-button:hover {
+  transform: translateY(-2px);
+  background: #202020;
+}
+
+/* LOGO HOME */
+
+.home-logo-bg {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-logo-bg img {
+  width: 660px;
+  max-width: 95%;
   height: auto;
-  display: block;
+  opacity: 0.92;
+  filter: drop-shadow(0 30px 35px rgba(0,0,0,0.12));
 }
 
-
-/* TABLET / MOBIL - MENIU ORIZONTAL IDENTIC CU RESTUL SITE-ULUI */
+/* TABLET / MOBIL */
 
 @media screen and (max-width: 1100px) {
-  html,
-  body {
-    height: auto;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background: #f1f1f1;
-  }
-
-  .sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    padding: 18px 14px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    border-radius: 0;
-  }
-
-  .sidebar-main {
-    width: 100%;
-    align-items: center;
-  }
-
-  .side-logo {
-    width: 120px;
-    margin: 0 0 14px 0;
-  }
-
-  nav {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px 12px;
-  }
-
-  nav a {
-    font-size: 14px;
-    line-height: 1.1;
-    text-align: center;
-    padding: 9px 10px;
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 999px;
-    background: transparent;
-    white-space: nowrap;
-  }
-
-  nav a:hover,
-  nav a.active {
-    background: rgba(255,255,255,0.14);
-    opacity: 1;
-  }
-
-  .sidebar-footer {
-    margin-top: 14px;
-    font-size: 11px;
-  }
-
   .home {
-    margin-left: 0;
+    position: relative;
+    left: auto;
+    top: auto;
     width: 100%;
     height: auto;
-    min-height: 0;
-    background: #f1f1f1;
-  }
-
-  .home-hero {
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-    padding: 42px 22px 48px;
-    text-align: center;
+    overflow: visible;
     background: #ffffff;
   }
 
-  .home-title {
-    justify-content: center;
+  .home-hero {
+    height: auto;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 58px 24px 72px;
   }
 
-  .home-title h1 {
-    font-size: 32px;
-    line-height: 1.18;
-    max-width: 520px;
+  .home-background {
+    background-position: center;
   }
 
-  .home-image img {
-    width: 310px;
-    max-width: 78%;
+  .home-text {
+    max-width: 100%;
+    z-index: 3;
+  }
+
+  .home-text h1 {
+    font-size: 38px;
+    line-height: 1.15;
+    max-width: 620px;
+    margin: 0 auto 22px;
+  }
+
+  .accent-line {
+    margin: 0 auto 24px;
+  }
+
+  .home-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 540px;
+    margin: 0 auto 30px;
+  }
+
+  .home-button {
+    padding: 14px 26px;
+    font-size: 13px;
+  }
+
+  .home-logo-bg {
+    margin-top: 45px;
+  }
+
+  .home-logo-bg img {
+    width: 360px;
+    max-width: 88%;
   }
 }
 
+/* TELEFOANE */
+
 @media screen and (max-width: 600px) {
-  .sidebar {
-    padding: 16px 10px 14px;
-  }
-
-  .side-logo {
-    width: 100px;
-    margin-bottom: 12px;
-  }
-
-  nav {
-    gap: 8px;
-  }
-
-  nav a {
-    font-size: 12px;
-    padding: 8px 8px;
-  }
-
-  .sidebar-footer {
-    font-size: 10px;
-  }
-
   .home-hero {
-    padding: 38px 18px 44px;
-    gap: 24px;
+    padding: 46px 18px 60px;
   }
 
-  .home-title h1 {
-    font-size: 28px;
-    line-height: 1.18;
+  .home-text h1 {
+    font-size: 30px;
   }
 
-  .home-image img {
+  .home-text p {
+    font-size: 16px;
+  }
+
+  .home-logo-bg {
+    margin-top: 34px;
+  }
+
+  .home-logo-bg img {
     width: 270px;
-    max-width: 82%;
+  }
+
+  .home-button {
+    font-size: 12px;
+    padding: 13px 22px;
   }
 }
