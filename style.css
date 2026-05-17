@@ -522,3 +522,215 @@ nav a.active {
     height: 260px;
   }
 }
+
+
+/* =========================================================
+   SIDEBAR LOGO ANIMATION
+   Se aplică pe toate paginile, doar în zona logo-ului.
+   ========================================================= */
+
+.sidebar {
+  overflow: hidden;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 13%, rgba(255,255,255,0.045), transparent 28%),
+    radial-gradient(circle at 24% 19%, rgba(0,145,255,0.085), transparent 25%),
+    radial-gradient(circle at 72% 19%, rgba(0,240,120,0.075), transparent 23%),
+    radial-gradient(circle at 30% 34%, rgba(255,35,30,0.075), transparent 21%),
+    radial-gradient(circle at 76% 34%, rgba(255,215,40,0.075), transparent 21%);
+}
+
+.sidebar-top,
+.sidebar-main,
+.sidebar-footer,
+.sidebar nav {
+  position: relative;
+  z-index: 6;
+}
+
+.sidebar-logo-wrap {
+  position: relative;
+  width: 100%;
+  height: 205px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  margin-bottom: 38px;
+}
+
+.sidebar-logo-wrap .side-logo {
+  position: relative;
+  z-index: 5;
+  margin-bottom: 0;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.16));
+}
+
+.sidebar-tech-animation {
+  position: absolute;
+  inset: -25px -55px 0 -55px;
+  z-index: 2;
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.sidebar-tech-animation svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.water-wave {
+  fill: none;
+  stroke: rgba(38,156,255,0.52);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-dasharray: 12 18;
+  animation: waterFlow 7s linear infinite;
+}
+
+.water-wave.wave2 {
+  stroke: rgba(130,210,255,0.34);
+  stroke-width: 1.2;
+  animation-duration: 10s;
+}
+
+.data-line {
+  fill: none;
+  stroke: rgba(55,240,125,0.44);
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-dasharray: 6 12;
+  animation: dataFlow 5.5s linear infinite;
+}
+
+.packet {
+  fill: rgba(55,240,125,0.92);
+  filter: drop-shadow(0 0 6px rgba(55,240,125,0.75));
+}
+
+.packet.p1 { animation: packetMove1 4.5s linear infinite; }
+.packet.p2 { animation: packetMove2 5.8s linear infinite; }
+.packet.p3 { animation: packetMove3 6.5s linear infinite; }
+
+.electric-line {
+  fill: none;
+  stroke: rgba(255,215,45,0.50);
+  stroke-width: 1.7;
+  stroke-linejoin: round;
+  stroke-dasharray: 8 18;
+  animation: electricPulse 2.1s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(255,210,30,0.65));
+}
+
+.heat-wave {
+  fill: none;
+  stroke: rgba(255,30,30,0.72);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 10 18;
+  animation: heatRise 4.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px rgba(255,35,35,0.55));
+}
+
+.heat-wave.h2 {
+  stroke: rgba(255,90,90,0.48);
+  animation-duration: 5.8s;
+}
+
+.red-particle {
+  fill: rgba(255,70,70,0.92);
+  filter: drop-shadow(0 0 8px rgba(255,40,40,0.95));
+}
+
+.red-particle.r1 { animation: redFloat1 3.8s linear infinite; }
+.red-particle.r2 { animation: redFloat2 4.6s linear infinite; }
+.red-particle.r3 { animation: redFloat3 5.2s linear infinite; }
+
+@keyframes waterFlow {
+  from { stroke-dashoffset: 0; transform: translateX(-4px); }
+  to { stroke-dashoffset: -120; transform: translateX(10px); }
+}
+
+@keyframes dataFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -90; }
+}
+
+@keyframes electricPulse {
+  0% { stroke-dashoffset: 0; opacity: 0.18; }
+  35% { opacity: 1; }
+  100% { stroke-dashoffset: -70; opacity: 0.18; }
+}
+
+@keyframes heatRise {
+  0% { stroke-dashoffset: 0; transform: translateY(12px); opacity: 0.25; }
+  45% { opacity: 0.72; }
+  100% { stroke-dashoffset: -110; transform: translateY(-16px); opacity: 0.25; }
+}
+
+@keyframes redFloat1 {
+  0% { transform: translate(55px,170px); opacity:0; }
+  15% { opacity:1; }
+  100% { transform: translate(80px,80px); opacity:0; }
+}
+
+@keyframes redFloat2 {
+  0% { transform: translate(95px,190px); opacity:0; }
+  15% { opacity:1; }
+  100% { transform: translate(120px,90px); opacity:0; }
+}
+
+@keyframes redFloat3 {
+  0% { transform: translate(125px,175px); opacity:0; }
+  20% { opacity:1; }
+  100% { transform: translate(145px,70px); opacity:0; }
+}
+
+@keyframes packetMove1 {
+  0% { transform: translate(188px,57px) scale(0.9); opacity:0; }
+  15% { opacity:1; }
+  100% { transform: translate(250px,42px) scale(0.9); opacity:0; }
+}
+
+@keyframes packetMove2 {
+  0% { transform: translate(175px,86px) scale(0.75); opacity:0; }
+  18% { opacity:1; }
+  100% { transform: translate(252px,88px) scale(0.75); opacity:0; }
+}
+
+@keyframes packetMove3 {
+  0% { transform: translate(185px,116px) scale(0.65); opacity:0; }
+  20% { opacity:1; }
+  100% { transform: translate(240px,136px) scale(0.65); opacity:0; }
+}
+
+@media screen and (max-width: 1100px) {
+  .sidebar-logo-wrap {
+    height: 135px;
+    margin-bottom: 14px;
+  }
+
+  .sidebar-tech-animation {
+    inset: -22px -35px 0 -35px;
+    opacity: 0.68;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-logo-wrap {
+    height: 118px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar-tech-animation {
+    opacity: 0.62;
+  }
+}
