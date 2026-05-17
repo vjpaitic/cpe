@@ -1,10 +1,8 @@
 /* =========================================================
    HOME.CSS
-   Aici NU există reguli pentru sidebar / nav.
-   Sidebar-ul rămâne controlat doar de style.css, identic cu restul paginilor.
+   Sidebar-ul / meniul NU este definit aici.
+   Sidebar-ul ramane controlat doar de style.css, identic cu restul paginilor.
    ========================================================= */
-
-/* HOME DESKTOP */
 
 .home {
   position: fixed;
@@ -27,27 +25,18 @@
   overflow: hidden;
 }
 
-/* FUNDAL HOME */
-
 .home-background {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-
   background-image:
-    linear-gradient(
-      rgba(255,255,255,0.72),
-      rgba(255,255,255,0.72)
-    ),
+    linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
     url("./images/home-bg.png");
-
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
 }
-
-/* TEXT HOME */
 
 .home-text {
   position: relative;
@@ -99,8 +88,6 @@
   background: #202020;
 }
 
-/* LOGO HOME */
-
 .home-logo-bg {
   position: relative;
   z-index: 2;
@@ -113,11 +100,9 @@
   width: 660px;
   max-width: 95%;
   height: auto;
-  opacity: 0.92;
+  opacity: 0.95;
   filter: drop-shadow(0 30px 35px rgba(0,0,0,0.12));
 }
-
-/* TABLET / MOBIL */
 
 @media screen and (max-width: 1100px) {
   .home {
@@ -131,16 +116,21 @@
   }
 
   .home-hero {
-    height: auto;
-    min-height: auto;
+    min-height: 760px;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 58px 24px 72px;
+    padding: 58px 24px 70px;
+    background: #ffffff;
   }
 
   .home-background {
-    background-position: center;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
+      url("./images/bgmobil.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
   .home-text {
@@ -172,7 +162,7 @@
   }
 
   .home-logo-bg {
-    margin-top: 45px;
+    margin-top: 54px;
   }
 
   .home-logo-bg img {
@@ -181,31 +171,91 @@
   }
 }
 
-/* TELEFOANE */
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) and (orientation: portrait) {
   .home-hero {
-    padding: 46px 18px 60px;
+    min-height: 760px;
+    padding: 38px 18px 18px;
+  }
+
+  .home-background {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.80), rgba(255,255,255,0.80)),
+      url("./images/bgmobil.png");
+    background-size: 100% auto;
+    background-position: center 138px;
+    background-repeat: no-repeat;
   }
 
   .home-text h1 {
-    font-size: 30px;
+    font-size: 29px;
+    line-height: 1.12;
+    margin-bottom: 18px;
+  }
+
+  .accent-line {
+    width: 74px;
+    height: 5px;
+    margin-bottom: 24px;
   }
 
   .home-text p {
     font-size: 16px;
-  }
-
-  .home-logo-bg {
-    margin-top: 34px;
-  }
-
-  .home-logo-bg img {
-    width: 270px;
+    line-height: 1.45;
+    margin-bottom: 28px;
   }
 
   .home-button {
     font-size: 12px;
-    padding: 13px 22px;
+    padding: 13px 24px;
+  }
+
+  .home-logo-bg {
+    margin-top: 96px;
+  }
+
+  .home-logo-bg img {
+    width: 265px;
+    max-width: 82%;
+  }
+}
+
+@media screen and (max-width: 950px) and (orientation: landscape) {
+  .home-hero {
+    min-height: 520px;
+    padding: 35px 36px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    text-align: left;
+  }
+
+  .home-background {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.74), rgba(255,255,255,0.74)),
+      url("./images/home-bg.png");
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .home-text h1 {
+    font-size: 30px;
+    text-align: left;
+    margin: 0 0 16px;
+  }
+
+  .accent-line {
+    margin: 0 0 18px;
+  }
+
+  .home-text p {
+    font-size: 15px;
+    margin: 0 0 22px;
+  }
+
+  .home-logo-bg {
+    margin-top: 0;
+  }
+
+  .home-logo-bg img {
+    width: 320px;
   }
 }
