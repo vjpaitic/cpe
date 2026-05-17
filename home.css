@@ -1,7 +1,7 @@
 /* =========================================================
-   HOME.CSS
-   Sidebar-ul / meniul NU este definit aici.
-   Sidebar-ul ramane controlat doar de style.css, identic cu restul paginilor.
+   HOME.CSS - RESET FINAL PENTRU BACKGROUND
+   Sidebar-ul si meniul sunt controlate DOAR de style.css.
+   Aici sunt doar regulile pentru prima pagina.
    ========================================================= */
 
 .home {
@@ -23,6 +23,7 @@
   align-items: center;
   padding: 0 70px;
   overflow: hidden;
+  background: #ffffff;
 }
 
 .home-background {
@@ -30,9 +31,7 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
-    url("./images/home-bg.png");
+  background-image: linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)), url("./images/home-bg.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -121,13 +120,10 @@
     flex-direction: column;
     text-align: center;
     padding: 58px 24px 70px;
-    background: #ffffff;
   }
 
   .home-background {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
-      url("./images/bgmobil.png");
+    background-image: linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)), url("./images/bgmobil.png");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -172,50 +168,84 @@
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
+  .home {
+    background: #ffffff;
+  }
+
   .home-hero {
-    min-height: 760px;
-    padding: 38px 18px 18px;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 9 / 16;
+    padding: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: #ffffff;
   }
 
   .home-background {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.80), rgba(255,255,255,0.80)),
-      url("./images/bgmobil.png");
-    background-size: 100% auto;
-    background-position: center 138px;
+    background-image: linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)), url("./images/bgmobil.png");
+    background-size: 100% 100%;
+    background-position: center center;
     background-repeat: no-repeat;
   }
 
+  .home-text {
+    position: absolute;
+    z-index: 3;
+    top: 4%;
+    left: 18px;
+    right: 18px;
+    max-width: none;
+    width: auto;
+    text-align: center;
+  }
+
   .home-text h1 {
-    font-size: 29px;
-    line-height: 1.12;
-    margin-bottom: 18px;
+    font-size: clamp(25px, 7.2vw, 34px);
+    line-height: 1.08;
+    margin: 0 auto 16px;
+    max-width: 440px;
   }
 
   .accent-line {
-    width: 74px;
+    width: 76px;
     height: 5px;
-    margin-bottom: 24px;
+    margin: 0 auto 22px;
   }
 
   .home-text p {
-    font-size: 16px;
+    font-size: clamp(14px, 4.1vw, 18px);
     line-height: 1.45;
-    margin-bottom: 28px;
+    margin: 0 auto 26px;
+    max-width: 440px;
   }
 
   .home-button {
     font-size: 12px;
-    padding: 13px 24px;
+    padding: 13px 26px;
   }
 
   .home-logo-bg {
-    margin-top: 96px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 58%;
+    margin: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .home-logo-bg img {
-    width: 265px;
-    max-width: 82%;
+    width: min(270px, 58vw);
+    max-width: none;
+    height: auto;
+    opacity: 0.95;
   }
 }
 
@@ -229,11 +259,18 @@
   }
 
   .home-background {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.74), rgba(255,255,255,0.74)),
-      url("./images/home-bg.png");
+    background-image: linear-gradient(rgba(255,255,255,0.74), rgba(255,255,255,0.74)), url("./images/home-bg.png");
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .home-text {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    text-align: left;
   }
 
   .home-text h1 {
@@ -252,6 +289,9 @@
   }
 
   .home-logo-bg {
+    position: relative;
+    top: auto;
+    transform: none;
     margin-top: 0;
   }
 
